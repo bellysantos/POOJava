@@ -1,10 +1,16 @@
+// Classe
+
 public class OvoPascoa {
 	private float preco;
-	private String sabor;
+	private Sabor sabor;
 	
-	public OvoPascoa(float preco, String sabor) {
+	private static int qtdOvos; // Se deixar público alguém pode zerar os valores
+	
+	
+	public OvoPascoa(float preco, Sabor sabor) { 
 		this.preco = preco; // this significa o contexto, escopo no qual o comando se encontra. Ex. OvoPascoa.preco
 		this.sabor = sabor;
+		this.qtdOvos ++; // Incrementa os new Ovos de Pascoa 
 		
 		// Compilador define um método construtor vazio, método é uma função 
 	}
@@ -14,7 +20,6 @@ public class OvoPascoa {
 		this.preco = this.preco - desconto;
 	}
 	
-	
 	public void aplicar20porcentoDesconto() { 
 		this.preco = this.preco * 0.8f; // Valor com novo desconto
 		}
@@ -22,4 +27,14 @@ public class OvoPascoa {
 	public float getPreco() {
 		return this.preco; // Retorna o preço atual ou retorna o valor
 	}
+	
+	static int getqtdOvos() {
+		return qtdOvos;
+	}
+	
+	public Sabor getSabor() {
+		return this.sabor;
+	}
 }
+
+// Enumerador = Rótulos: Todo enumerador pertence ao conjunto dos inteiros.
